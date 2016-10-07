@@ -47,37 +47,70 @@ document.addEventListener("DOMContentLoaded", function() {
 
   //create function to sort by alphabet 
   var sortByAlphabet = function() {
+    userId = 0;
     //clear the UL tag
-    alert('sortByAlphabet called!');
-    // for (var i = 0; i < allUsersSorted.length; i++) {
-    //   var ul = document.getElementsByClassName("all-usernames")[0];
-    //   var li = document.createElement("li");
-    //   li.appendChild(document.createTextNode(allUsersSorted[i]));
-    //   li.setAttribute("class", "username");
-    //   ul.appendChild(li);
-    // }
+    var ul = document.getElementsByClassName("all-usernames")[0];
+    ul.innerHTML = '';
+    for (var i = 0; i < allUsersSorted.length; i++) {
+      ul = document.getElementsByClassName("all-usernames")[0];
+      var li = document.createElement("li");
+      li.appendChild(document.createTextNode(allUsersSorted[i]));
+      li.setAttribute("class", "username");
+      li.setAttribute("data-key", allUsersSorted[i]);
+      userId++;
+      li.setAttribute("data-id", userId);
+      ul.appendChild(li);
+    }
   }
 
   //create function to sort in reverse alphabetical order
   var sortByReverse = function() {
-    alert('sortByReverse called!');
+    userId = allUsersSorted.length;
+    //clear the UL tag
+    var ul = document.getElementsByClassName("all-usernames")[0];
+    ul.innerHTML = '';
+    for (var i = allUsersSorted.length - 1 ; i >= 0; i--) {
+      ul = document.getElementsByClassName("all-usernames")[0];
+      var li = document.createElement("li");
+      li.appendChild(document.createTextNode(allUsersSorted[i]));
+      li.setAttribute("class", "username");
+      li.setAttribute("data-key", allUsersSorted[i]);
+      li.setAttribute("data-id", userId);
+      userId--;
+      ul.appendChild(li);
+    }
   }
 
   //create function to sort by all caps first
   var sortByAllCaps = function() {
-    alert('sortByAllCaps called!');
+    var ul = document.getElementsByClassName("all-usernames")[0];
+    ul.innerHTML = '';
   }
 
   //create function to sort by all lowercase first
   var sortByLowercase = function() {
-    alert('sortByLowercase called!');
+    var ul = document.getElementsByClassName("all-usernames")[0];
+    ul.innerHTML = '';
   }
 
 
 //create function to execute the requested sorting type
 var sortingCommand = function(e) {
   var command = e.target.getAttribute("class");
-  console.log('this is e.target: ', command);
+  switch (command) {
+    case "sort-by-alphabet":
+      sortByAlphabet();
+      break;
+    case "sort-reverse":
+      sortByReverse();
+      break;
+    case "sort-all-caps":
+      sortByAllCaps();
+      break;
+    case "sort-all-lowercase":
+      sortByLowercase();
+      break;
+  }
 } 
 
 //create on click handlers for the different sorting buttons
