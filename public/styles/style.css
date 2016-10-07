@@ -12,3 +12,10 @@ h1 {
   width: 50%;
 }
 
+.sorting-buttons {
+  float: left;
+}
+
+div, div button {
+  margin: 20px 0;
+}
