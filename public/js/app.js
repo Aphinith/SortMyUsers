@@ -1,15 +1,37 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+  /***********************************************************************************
+  Ignore everything between lines 3 - 16 , it is just used to create extra information for users
+  ************************************************************************************/
+
+  //create variable to hold unique number ID for users
+  var userId = 0;
+
+  var pic = ['pick2', 'pick3', 'pick4', 'pick5', 'pick6', 'pick7', 'pick8', 'pick9', 'pick10', 'pick11', 'pick12', 'pick13', 'pick14', 'pick15', 'pick16', 'pick17', 'pick18', 'pick19', 'pick20', 'pick21', 'pick22', 'pick23'];
+
+  var bookTitles = ['Book1', 'Book2', 'Book3', 'Book4', 'Book5', 'Book6', 'Book7', 'Book8', 'Book9', 'Book10', 'Book11', 'Book12', 'Book13', 'Book14', 'Book15', 'Book16', 'Book17', 'Book18', 'Book19', 'Book20', 'Book21', 'Book22', 'Book23'];
+
+  var quotes = ['quote1', 'quote2', 'quote3', 'quote4', 'quote5', 'quote6', 'quote7', 'quote8', 'quote9', 'quote10', 'quote11', 'quote12', 'quote13', 'quote14', 'quote15', 'quote16', 'quote17', 'quote18', 'quote19', 'quote20', 'quote21', 'quote22', 'quote23']
+
   var allUsers = ['Nick', 'jake', 'RAY', 'Kate', 'Nick',  'Jeremy', 'nick', 'AMOL', 'rAY', 'VIANNEY', 'Shilpika', 'nick', 'THOMAS', 'tom', 'james', 'JERM', 'amOl', 'kate', 'SCOTT', 'Jenifer', 'bill', 'jenny', 'STEVEN'];
 
   //create variable to store sorted users;
   var allUsersSorted;
 
-  //create variable to hold unique number ID for users
-  var userId = 0;
+  //create class to create users with information
+  var UserInfo = function(username, id, pic, favoriteBook, favoriteQuote) {
+    this.username = username;
+    this.id = id;
+    this.pic = pic;
+    this.favoriteBook = favoriteBook;
+    this.favoriteQuote = favoriteQuote;
+  }
+
+  //create variable to store sorted users as objects
+  var finalSortedUserList = [];
 
   /***********************************************************************************
-  Below function automatically sorts usernames upon page loading
+  Lines 37-67 are for automatically sorting usernames upon page loading and creating a array of objects that are the newly sorted usernames
   ************************************************************************************/
 
   (function defaultSort() {
@@ -28,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
       return allUsers[el.index];
     });
 
-    //iterate through newly sorted 
+    //iterate through newly sorted list
     for (var i = 0; i < allUsersSorted.length; i++) {
       var ul = document.getElementsByClassName("all-usernames")[0];
       var li = document.createElement("li");
@@ -38,11 +60,29 @@ document.addEventListener("DOMContentLoaded", function() {
       userId++;
       li.setAttribute("data-id", userId);
       ul.appendChild(li);
+
+      //create final user list as objects
+      finalSortedUserList.push(new UserInfo(allUsersSorted[i], userId, pic[i], bookTitles[i], quotes[i]));
     }
   })();
 
   /***********************************************************************************
-  Below are the different sorting methods
+  Lines 74 - 83 is to help sorting by ALL CAPS and by lowercase functions
+  ************************************************************************************/
+
+  var nameWithCap = [];
+  var nameWithLowercase = [];
+
+  for (var i = 0; i < finalSortedUserList.length; i++) {
+    if (finalSortedUserList[i]['username'][0] === finalSortedUserList[i]['username'][0].toUpperCase()) {
+      nameWithCap.push(finalSortedUserList[i]);
+    } else {
+      nameWithLowercase.push(finalSortedUserList[i]);
+    }
+  }
+
+  /***********************************************************************************
+  Lines 89 - 164 are the different sorting functions
   ************************************************************************************/
 
   //create function to sort by alphabet 
@@ -51,18 +91,14 @@ document.addEventListener("DOMContentLoaded", function() {
     var ul = document.getElementsByClassName("all-usernames")[0];
     ul.innerHTML = '';
 
-    //reset userId
-    userId = 0;
-
-    //iterate through list and populate names on DOM
-    for (var i = 0; i < allUsersSorted.length; i++) {
+    //iterate through finalSortedUserList and populate names on DOM
+    for (var i = 0; i < finalSortedUserList.length; i++) {
       ul = document.getElementsByClassName("all-usernames")[0];
       var li = document.createElement("li");
-      li.appendChild(document.createTextNode(allUsersSorted[i]));
+      li.appendChild(document.createTextNode(finalSortedUserList[i]['username']));
       li.setAttribute("class", "username");
-      li.setAttribute("data-key", allUsersSorted[i]);
-      userId++;
-      li.setAttribute("data-id", userId);
+      li.setAttribute("data-username", finalSortedUserList[i]['username']);
+      li.setAttribute("data-userId", finalSortedUserList[i]['id']);
       ul.appendChild(li);
     }
   }
@@ -73,18 +109,13 @@ document.addEventListener("DOMContentLoaded", function() {
     var ul = document.getElementsByClassName("all-usernames")[0];
     ul.innerHTML = '';
 
-    //start userId from the last number available
-    userId = allUsersSorted.length;
-
-    //iterate through list and populate names on DOM
-    for (var i = allUsersSorted.length - 1 ; i >= 0; i--) {
+    for (var i = finalSortedUserList.length - 1; i >= 0; i--) {
       ul = document.getElementsByClassName("all-usernames")[0];
       var li = document.createElement("li");
-      li.appendChild(document.createTextNode(allUsersSorted[i]));
+      li.appendChild(document.createTextNode(finalSortedUserList[i]['username']));
       li.setAttribute("class", "username");
-      li.setAttribute("data-key", allUsersSorted[i]);
-      li.setAttribute("data-id", userId);
-      userId--;
+      li.setAttribute("data-username", finalSortedUserList[i]['username']);
+      li.setAttribute("data-userId", finalSortedUserList[i]['id']);
       ul.appendChild(li);
     }
   }
@@ -95,50 +126,19 @@ document.addEventListener("DOMContentLoaded", function() {
     var ul = document.getElementsByClassName("all-usernames")[0];
     ul.innerHTML = '';
 
-    userId = 0;
+    //create a final sorted list with all names starting with a capital letter first
+    var joinedNames = nameWithCap.concat(nameWithLowercase);
 
-    //create variable to hold list of users with corresponding Id's
-    var usernameWithId = [];
-
-    //create class to instantiate username with id
-    var UserObject = function(id, username) {
-      this.id = id;
-      this.username = username;
-    }
-
-    //iterate through sorted users to make instantiation of UserObjects
-    for (var i = 0; i < allUsersSorted.length; i++) {
-      userId++;
-      //push new instantiations into usernameWithId array
-      usernameWithId.push(new UserObject(userId, allUsersSorted[i]));
-    }
-
-    //create two new arrays, one to hold names that start with uppercase and one to hold names that start with a lowercase
-    var uppercaseNames = [];
-    var lowercaseNames = [];
-
-    //iterat through usernameWithId array
-    for (var i =0; i < usernameWithId.length; i++) {
-      //now we can separate the names that begin with uppercase and lowercase by pushing them to their corresponding arrays
-      if (usernameWithId[i]['username'][0] === usernameWithId[i]['username'][0].toUpperCase()) {
-        uppercaseNames.push(usernameWithId[i])
-      } else {
-        lowercaseNames.push(usernameWithId[i])
-      }
-    }
-    //create array to combine newly ordered names with matching ids, starting with names that begin a capital letter first, then all names sorted beginning with lower case letters
-    var joinedNames = uppercaseNames.concat(lowercaseNames);
-
-    //iterate through list and populate names on DOM
     for (var i = 0; i < joinedNames.length; i++) {
       ul = document.getElementsByClassName("all-usernames")[0];
       var li = document.createElement("li");
       li.appendChild(document.createTextNode(joinedNames[i]['username']));
       li.setAttribute("class", "username");
-      li.setAttribute("data-key", joinedNames[i]['username']);
-      li.setAttribute("data-id", joinedNames[i]['id']);
+      li.setAttribute("data-username", joinedNames[i]['username']);
+      li.setAttribute("data-userId", joinedNames[i]['id']);
       ul.appendChild(li);
     }
+
   }
 
   //create function to sort by all lowercase first
@@ -147,54 +147,24 @@ document.addEventListener("DOMContentLoaded", function() {
     var ul = document.getElementsByClassName("all-usernames")[0];
     ul.innerHTML = '';
 
-    userId = 0;
+    //create a final sorted list with all names starting with a lowercase letter first
+    var joinedNames = nameWithLowercase.concat(nameWithCap);
 
-    //create variable to hold list of users with corresponding Id's
-    var usernameWithId = [];
-
-    //create class to instantiate username with id
-    var UserObject = function(id, username) {
-      this.id = id;
-      this.username = username;
-    }
-
-    //iterate through sorted users to make instantiation of UserObjects
-    for (var i = 0; i < allUsersSorted.length; i++) {
-      userId++;
-      //push new instantiations into usernameWithId array
-      usernameWithId.push(new UserObject(userId, allUsersSorted[i]));
-    }
-
-    //create two new arrays, one to hold names that start with uppercase and one to hold names that start with a lowercase
-    var uppercaseNames = [];
-    var lowercaseNames = [];
-
-    //iterat through usernameWithId array
-    for (var i =0; i < usernameWithId.length; i++) {
-      //now we can separate the names that begin with uppercase and lowercase by pushing them to their corresponding arrays
-      if (usernameWithId[i]['username'][0] === usernameWithId[i]['username'][0].toUpperCase()) {
-        uppercaseNames.push(usernameWithId[i])
-      } else {
-        lowercaseNames.push(usernameWithId[i])
-      }
-    }
-    //create array to combine newly ordered names with matching ids, starting with names that begin a capital letter first, then all names sorted beginning with lower case letters
-    var joinedNames = lowercaseNames.concat(uppercaseNames);
-
-    //iterate through list and populate names on DOM
     for (var i = 0; i < joinedNames.length; i++) {
       ul = document.getElementsByClassName("all-usernames")[0];
       var li = document.createElement("li");
       li.appendChild(document.createTextNode(joinedNames[i]['username']));
       li.setAttribute("class", "username");
-      li.setAttribute("data-key", joinedNames[i]['username']);
-      li.setAttribute("data-id", joinedNames[i]['id']);
+      li.setAttribute("data-username", joinedNames[i]['username']);
+      li.setAttribute("data-userId", joinedNames[i]['id']);
       ul.appendChild(li);
     }
   }
 
 
-//create function to execute the requested sorting type
+/***********************************************************************************
+Lines 169 - 192 are for creating the on click event handler for sorting functions
+************************************************************************************/
 var sortingCommand = function(e) {
   var command = e.target.getAttribute("class");
   switch (command) {
