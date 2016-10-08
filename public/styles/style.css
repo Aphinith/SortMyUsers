@@ -19,3 +19,7 @@ h1 {
 div, div button {
   margin: 20px 0;
 }
+
+.username {
+  cursor: pointer;
+}
