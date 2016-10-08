@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
   //create variable to hold unique number ID for users
   var userId = 0;
 
-  var pic = ['pick2', 'pick3', 'pick4', 'pick5', 'pick6', 'pick7', 'pick8', 'pick9', 'pick10', 'pick11', 'pick12', 'pick13', 'pick14', 'pick15', 'pick16', 'pick17', 'pick18', 'pick19', 'pick20', 'pick21', 'pick22', 'pick23'];
+  var pic = ['pick1', 'pick2', 'pick3', 'pick4', 'pick5', 'pick6', 'pick7', 'pick8', 'pick9', 'pick10', 'pick11', 'pick12', 'pick13', 'pick14', 'pick15', 'pick16', 'pick17', 'pick18', 'pick19', 'pick20', 'pick21', 'pick22', 'pick23'];
 
   var bookTitles = ['Book1', 'Book2', 'Book3', 'Book4', 'Book5', 'Book6', 'Book7', 'Book8', 'Book9', 'Book10', 'Book11', 'Book12', 'Book13', 'Book14', 'Book15', 'Book16', 'Book17', 'Book18', 'Book19', 'Book20', 'Book21', 'Book22', 'Book23'];
 
@@ -205,7 +205,29 @@ for (var i = 0; i < sortingButtons.length; i++) {
   var selectedUser = function(e) {
     var userId = e.target.getAttribute("data-id");
     var user = finalSortedUserList[userId - 1];
-    console.log('this is user: ', user);
+    //clear the UL tag
+    var ul = document.getElementsByClassName("single-user-info")[0];
+    ul.innerHTML = '';
+
+    //create all tags
+    var liPic = document.createElement("li");
+    var liUsername = document.createElement("li");
+    var liId = document.createElement("li");
+    var liBook = document.createElement("li");
+    var liQuote = document.createElement("li");
+    //create text for list items
+    liPic.appendChild(document.createTextNode(user['pic']));
+    liUsername.appendChild(document.createTextNode(user['username']));
+    liId.appendChild(document.createTextNode(user['id']));
+    liBook.appendChild(document.createTextNode(user['favoriteBook']));
+    liQuote.appendChild(document.createTextNode(user['favoriteQuote']));
+    //append information to ul
+    ul.appendChild(liPic);
+    ul.appendChild(liUsername);
+    ul.appendChild(liId);
+    ul.appendChild(liBook);
+    ul.appendChild(liQuote);
+
   }
 
   /***********************************************************************************
