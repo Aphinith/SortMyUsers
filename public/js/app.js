@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var finalSortedUserList = [];
 
   /***********************************************************************************
-  Lines 37-67 are for automatically sorting usernames upon page loading and creating a array of objects that are the newly sorted usernames
+  Lines 37-67: for automatically sorting usernames upon page loading and creating a array of objects that are the newly sorted usernames
   ************************************************************************************/
 
   (function defaultSort() {
@@ -64,10 +64,11 @@ document.addEventListener("DOMContentLoaded", function() {
       //create final user list as objects
       finalSortedUserList.push(new UserInfo(allUsersSorted[i], userId, pic[i], bookTitles[i], quotes[i]));
     }
+
   })();
 
   /***********************************************************************************
-  Lines 74 - 83 is to help sorting by ALL CAPS and by lowercase functions
+  Lines 74 - 83: to help sorting by ALL CAPS and by lowercase functions
   ************************************************************************************/
 
   var nameWithCap = [];
@@ -82,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   /***********************************************************************************
-  Lines 89 - 164 are the different sorting functions
+  Lines 89 - 164: the different sorting functions
   ************************************************************************************/
 
   //create function to sort by alphabet 
@@ -101,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
       li.setAttribute("data-userId", finalSortedUserList[i]['id']);
       ul.appendChild(li);
     }
+    clickUsers();
   }
 
   //create function to sort in reverse alphabetical order
@@ -118,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
       li.setAttribute("data-userId", finalSortedUserList[i]['id']);
       ul.appendChild(li);
     }
+    clickUsers();
   }
 
   //create function to sort by all caps first
@@ -138,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
       li.setAttribute("data-userId", joinedNames[i]['id']);
       ul.appendChild(li);
     }
-
+    clickUsers();
   }
 
   //create function to sort by all lowercase first
@@ -159,11 +162,12 @@ document.addEventListener("DOMContentLoaded", function() {
       li.setAttribute("data-userId", joinedNames[i]['id']);
       ul.appendChild(li);
     }
+    clickUsers();
   }
 
 
 /***********************************************************************************
-Lines 169 - 192 are for creating the on click event handler for sorting functions
+Lines 169 - 191: for creating the on-click event handler for sorting functions
 ************************************************************************************/
 var sortingCommand = function(e) {
   var command = e.target.getAttribute("class");
@@ -190,6 +194,24 @@ for (var i = 0; i < sortingButtons.length; i++) {
   sortingButtons[i].addEventListener("click", sortingCommand, false);
 }
 
+  /***********************************************************************************
+  Lines ### - ###: for handling on-click event handler for selecting user from list
+  ************************************************************************************/
 
+  var selectedUser = function(e) {
+    console.log('selectedUser: ', e.target);
+  }
+
+  /***********************************************************************************
+  Lines ### - ###: for creating the on-click event handler for selecting user from list
+  ************************************************************************************/
+
+  function clickUsers() {
+    var selectUser = document.getElementsByClassName("username");
+    for (var i = 0; i < selectUser.length; i++) {
+      selectUser[i].addEventListener("click", selectedUser, false);
+    }
+  };
+  clickUsers();
 
 });
