@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
       li.appendChild(document.createTextNode(finalSortedUserList[i]['username']));
       li.setAttribute("class", "username");
       li.setAttribute("data-username", finalSortedUserList[i]['username']);
-      li.setAttribute("data-userId", finalSortedUserList[i]['id']);
+      li.setAttribute("data-id", finalSortedUserList[i]['id']);
       ul.appendChild(li);
     }
     clickUsers();
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
       li.appendChild(document.createTextNode(finalSortedUserList[i]['username']));
       li.setAttribute("class", "username");
       li.setAttribute("data-username", finalSortedUserList[i]['username']);
-      li.setAttribute("data-userId", finalSortedUserList[i]['id']);
+      li.setAttribute("data-id", finalSortedUserList[i]['id']);
       ul.appendChild(li);
     }
     clickUsers();
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function() {
       li.appendChild(document.createTextNode(joinedNames[i]['username']));
       li.setAttribute("class", "username");
       li.setAttribute("data-username", joinedNames[i]['username']);
-      li.setAttribute("data-userId", joinedNames[i]['id']);
+      li.setAttribute("data-id", joinedNames[i]['id']);
       ul.appendChild(li);
     }
     clickUsers();
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function() {
       li.appendChild(document.createTextNode(joinedNames[i]['username']));
       li.setAttribute("class", "username");
       li.setAttribute("data-username", joinedNames[i]['username']);
-      li.setAttribute("data-userId", joinedNames[i]['id']);
+      li.setAttribute("data-id", joinedNames[i]['id']);
       ul.appendChild(li);
     }
     clickUsers();
@@ -199,7 +199,9 @@ for (var i = 0; i < sortingButtons.length; i++) {
   ************************************************************************************/
 
   var selectedUser = function(e) {
-    console.log('selectedUser: ', e.target);
+    var userId = e.target.getAttribute("data-id");
+    var user = finalSortedUserList[userId - 1];
+    console.log('this is user: ', user);
   }
 
   /***********************************************************************************
