@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
   //create variable to hold unique number ID for users
   var userId = 0;
 
-  var pic = ['pick1', 'pick2', 'pick3', 'pick4', 'pick5', 'pick6', 'pick7', 'pick8', 'pick9', 'pick10', 'pick11', 'pick12', 'pick13', 'pick14', 'pick15', 'pick16', 'pick17', 'pick18', 'pick19', 'pick20', 'pick21', 'pick22', 'pick23'];
+  var pic = ['pic1', 'pic2', 'pick', 'pic4', 'pic5', 'pic6', 'pic7', 'pic8', 'pic9', 'pic10', 'pic11', 'pic12', 'pic13', 'pic14', 'pic15', 'pic16', 'pic17', 'pic18', 'pic19', 'pic20', 'pic21', 'pic22', 'pic23'];
 
   var bookTitles = ['Book1', 'Book2', 'Book3', 'Book4', 'Book5', 'Book6', 'Book7', 'Book8', 'Book9', 'Book10', 'Book11', 'Book12', 'Book13', 'Book14', 'Book15', 'Book16', 'Book17', 'Book18', 'Book19', 'Book20', 'Book21', 'Book22', 'Book23'];
 
@@ -210,19 +210,19 @@ for (var i = 0; i < sortingButtons.length; i++) {
     ul.innerHTML = '';
 
     //create all tags
-    var liPic = document.createElement("li");
+    var imgPic = document.createElement("IMG");
     var liUsername = document.createElement("li");
     var liId = document.createElement("li");
     var liBook = document.createElement("li");
     var liQuote = document.createElement("li");
     //create text for list items
-    liPic.appendChild(document.createTextNode(user['pic']));
+    imgPic.setAttribute("src", "styles/assets/" + user['pic'] + ".jpeg")
     liUsername.appendChild(document.createTextNode("Username: " + user['username']));
     liId.appendChild(document.createTextNode("User ID: " + user['id']));
     liBook.appendChild(document.createTextNode("Favorite Book: " + user['favoriteBook']));
     liQuote.appendChild(document.createTextNode("Favorite Book: " + user['favoriteQuote']));
     //append information to ul
-    ul.appendChild(liPic);
+    ul.appendChild(imgPic);
     ul.appendChild(liUsername);
     ul.appendChild(liId);
     ul.appendChild(liBook);
