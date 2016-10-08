@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
 
   /***********************************************************************************
-  Ignore everything between lines 3 - 16 , it is just used to create extra information for users
+  Ignore everything between lines 7 - 16 , it is just used to create extra information for users
   ************************************************************************************/
+
+  var allUsers = ['Nick', 'jake', 'RAY', 'Kate', 'Nick',  'Jeremy', 'nick', 'AMOL', 'rAY', 'VIANNEY', 'Shilpika', 'nick', 'THOMAS', 'tom', 'james', 'JERM', 'amOl', 'kate', 'SCOTT', 'Jenifer', 'bill', 'jenny', 'STEVEN'];
 
   //create variable to hold unique number ID for users
   var userId = 0;
@@ -13,7 +15,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var quotes = ['quote1', 'quote2', 'quote3', 'quote4', 'quote5', 'quote6', 'quote7', 'quote8', 'quote9', 'quote10', 'quote11', 'quote12', 'quote13', 'quote14', 'quote15', 'quote16', 'quote17', 'quote18', 'quote19', 'quote20', 'quote21', 'quote22', 'quote23']
 
-  var allUsers = ['Nick', 'jake', 'RAY', 'Kate', 'Nick',  'Jeremy', 'nick', 'AMOL', 'rAY', 'VIANNEY', 'Shilpika', 'nick', 'THOMAS', 'tom', 'james', 'JERM', 'amOl', 'kate', 'SCOTT', 'Jenifer', 'bill', 'jenny', 'STEVEN'];
+  /***********************************************************************************
+  Below is where the real fun begins
+  ************************************************************************************/
 
   //create variable to store sorted users;
   var allUsersSorted;
@@ -31,11 +35,11 @@ document.addEventListener("DOMContentLoaded", function() {
   var finalSortedUserList = [];
 
   /***********************************************************************************
-  Lines 37-67: for automatically sorting usernames upon page loading and creating a array of objects that are the newly sorted usernames
+  Lines 37-67: for automatically sorting usernames upon page loading and creating an array of objects that are the newly sorted usernames
   ************************************************************************************/
 
   (function defaultSort() {
-    //create new variable to hold all user names
+    //create new variable to hold all usernames
     var mapped = allUsers.map(function(el, i) {
       return { index: i, value: el.toLowerCase() };
     })
@@ -50,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
       return allUsers[el.index];
     });
 
-    //iterate through newly sorted list
+    //iterate through newly sorted list and show sorted names on DOM
     for (var i = 0; i < allUsersSorted.length; i++) {
       var ul = document.getElementsByClassName("all-usernames")[0];
       var li = document.createElement("li");
@@ -61,14 +65,14 @@ document.addEventListener("DOMContentLoaded", function() {
       li.setAttribute("data-id", userId);
       ul.appendChild(li);
 
-      //create final user list as objects
+      //create final user list as objects which will be used as our main array for everything else
       finalSortedUserList.push(new UserInfo(allUsersSorted[i], userId, pic[i], bookTitles[i], quotes[i]));
     }
 
   })();
 
   /***********************************************************************************
-  Lines 74 - 83: to help sorting by ALL CAPS and by lowercase functions
+  Lines ## - ##: to help sorting functions by "ALL CAPS" and by "lowercase" options 
   ************************************************************************************/
 
   var nameWithCap = [];
