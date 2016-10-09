@@ -1,10 +1,24 @@
 
+body {
+  background-color: #181C65;
+}
+
 h1 {
   color: blue;
   text-align: center;
+  font-family: "Times New Roman", Times, Serif;
+  font-size: 45px;
+  margin-bottom: 15px;
 }
 
-
+.main {
+  background-color: azure;
+  height: 710px;
+  border-left-style: solid;
+  border-left: thick;
+  border-right-style: solid;
+  border-right: thick;
+}
 
 .c1 {
   background-color: red;
@@ -42,16 +56,6 @@ input.search-button {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /****************************************************
 How list of users are displayed on left column
 *****************************************************/
@@ -75,7 +79,7 @@ div.user-list{
 
 ul.all-usernames {
   position: absolute;
-  left: -10px;
+  left: 5px;
 }
 
 .username {
@@ -107,7 +111,9 @@ img{
   border-radius: 25px;
 }
 
-
+.single-user-info {
+  font-size: 18px;
+}
 
 /****************************************************
 How usernames are displayed
