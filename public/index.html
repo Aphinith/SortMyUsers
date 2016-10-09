@@ -12,7 +12,7 @@
 <body>
   <div class="container">
     <section class="row">
-      <div class="col-md-12 col-md-offset-0" id="main">
+      <div class="col-md-12 id="main">
         <h1>User Directory</h1>
 
         <div class="search-bar">
@@ -39,19 +39,25 @@
       </div>
 
       <div class="row">
-        <div class="col-md-1">
-          <div class="c1">
+        <div class="col-md-6 instructions">
+          <div>*Scroll down to see all users*</div>
+        </div>
+        <div class="col-md-6 instructions">
+          <div>*Click username on left to see user info*</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6" id="list-of-all-users">
+          <div>
             <ul class="all-usernames"></ul>
           </div>
         </div>
-        <div class="col-md-5 col-md-offset-5">
-          <div class="c2">
-            
+        <div class="col-md-6">
+          <div>
             <div class="user-info">
-              This is where each specific user information will be listed
               <ul class="single-user-info"></ul>
             </div>
-
           </div>
         </div>
       </div>
