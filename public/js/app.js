@@ -213,6 +213,9 @@ for (var i = 0; i < sortingButtons.length; i++) {
     var ul = document.getElementsByClassName("single-user-info")[0];
     ul.innerHTML = '';
 
+    //create variable to target div tag to insert pic
+    var div = document.getElementsByClassName("single-user-pic")[0];
+    div.innerHTML = '';
     //create all tags
     var imgPic = document.createElement("IMG");
     var liUsername = document.createElement("li");
@@ -226,7 +229,7 @@ for (var i = 0; i < sortingButtons.length; i++) {
     liBook.appendChild(document.createTextNode("Favorite Book: " + user['favoriteBook']));
     liQuote.appendChild(document.createTextNode("Favorite Quote: " + user['favoriteQuote']));
     //append information to ul
-    ul.appendChild(imgPic);
+    div.appendChild(imgPic);
     ul.appendChild(liUsername);
     ul.appendChild(liId);
     ul.appendChild(liBook);

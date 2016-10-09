@@ -53,7 +53,7 @@ input.search-button {
 
 
 /****************************************************
-Column for list of users
+How list of users are displayed on left column
 *****************************************************/
 
 #all-users-text {
@@ -92,7 +92,25 @@ ul.all-usernames {
 }
 
 /****************************************************
-How username are displayed
+How single user is displayed on right column
+*****************************************************/
+
+.single-user-pic {
+  margin-top: 15px;
+  text-align: center;
+  height: 275px;
+  overflow: hidden;
+  width: 100%;
+}
+
+img{
+  border-radius: 25px;
+}
+
+
+
+/****************************************************
+How usernames are displayed
 *****************************************************/
 
 li {
