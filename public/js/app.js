@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function() {
 Lines 169 - 191: for creating the on-click event handler for sorting functions
 ************************************************************************************/
 var sortingCommand = function(e) {
-  var command = e.target.getAttribute("class");
+  var command = e.target.getAttribute("id");
   switch (command) {
     case "sort-by-alphabet":
       sortByAlphabet();
@@ -196,7 +196,7 @@ var sortingCommand = function(e) {
 } 
 
 //create on click handlers for the different sorting buttons
-var sortingButtons = document.getElementsByTagName("button");
+var sortingButtons = document.getElementsByClassName("sorting-option");
 
 for (var i = 0; i < sortingButtons.length; i++) {
   sortingButtons[i].addEventListener("click", sortingCommand, false);
