@@ -224,10 +224,10 @@ for (var i = 0; i < sortingButtons.length; i++) {
     var liQuote = document.createElement("li");
     //create text for list items
     imgPic.setAttribute("src", "styles/assets/" + user['pic'] + '.jpeg')
-    liUsername.appendChild(document.createTextNode("Username: " + user['username']));
-    liId.appendChild(document.createTextNode("User ID: " + user['id']));
-    liBook.appendChild(document.createTextNode("Favorite Book: " + user['favoriteBook']));
-    liQuote.appendChild(document.createTextNode("Favorite Quote: " + user['favoriteQuote']));
+    liUsername.appendChild(document.createTextNode("USERNAME: " + user['username']));
+    liId.appendChild(document.createTextNode("USER ID: " + user['id']));
+    liBook.appendChild(document.createTextNode("FAVORITE BOOK: " + user['favoriteBook']));
+    liQuote.appendChild(document.createTextNode("FAVORITE QUOTE: " + user['favoriteQuote']));
     //append information to ul
     div.appendChild(imgPic);
     ul.appendChild(liUsername);
