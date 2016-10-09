@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", function() {
   //create variable to hold unique number ID for users
   var userId = 0;
 
-  var pic = ['pic1', 'pic2', 'pick', 'pic4', 'pic5', 'pic6', 'pic7', 'pic8', 'pic9', 'pic10', 'pic11', 'pic12', 'pic13', 'pic14', 'pic15', 'pic16', 'pic17', 'pic18', 'pic19', 'pic20', 'pic21', 'pic22', 'pic23'];
+  var pic = ['pic1', 'pic2', 'pic3', 'pic4', 'pic5', 'pic6', 'pic7', 'pic8', 'pic9', 'pic10', 'pic11', 'pic12', 'pic13', 'pic14', 'pic15', 'pic16', 'pic17', 'pic18', 'pic19', 'pic20', 'pic21', 'pic22', 'pic23'];
 
-  var bookTitles = ['Book1', 'Book2', 'Book3', 'Book4', 'Book5', 'Book6', 'Book7', 'Book8', 'Book9', 'Book10', 'Book11', 'Book12', 'Book13', 'Book14', 'Book15', 'Book16', 'Book17', 'Book18', 'Book19', 'Book20', 'Book21', 'Book22', 'Book23'];
+  var bookTitles = ['George Orwell 1984', 'The Great Gatsby', 'The Adventures of Huckleberry Finn', 'Ulysses', 'War and Peace', 'On The Road', 'The Catcher in the Rye', 'The Illiad', 'The Odyssey', "Gullliver's Travels", 'Catch22', 'Emma', 'Pride and Prejudice', 'To Kill a Mockingbird', 'Lord of the Flies', 'Wuthering Heights', 'Frankenstein', 'The Canterbury Tales', 'Robinson Crusoe', 'The Scarlet Letter', 'The Count of Monte Cristo', 'Great Expectations', 'Tales of Edgar Allan Poe'];
 
-  var quotes = ['quote1', 'quote2', 'quote3', 'quote4', 'quote5', 'quote6', 'quote7', 'quote8', 'quote9', 'quote10', 'quote11', 'quote12', 'quote13', 'quote14', 'quote15', 'quote16', 'quote17', 'quote18', 'quote19', 'quote20', 'quote21', 'quote22', 'quote23']
+  var quotes = ['Life is about making an impact, not making an income. –Kevin Kruse', 'Whatever the mind of man can conceive and believe, it can achieve. –Napoleon Hill', 'Strive not to be a success, but rather to be of value. –Albert Einstein', 'I attribute my success to this: I never gave or took any excuse. –Florence Nightingale', 'You miss 100% of the shots you don’t take. –Wayne Gretzky', 'The most difficult thing is the decision to act, the rest is merely tenacity. –Amelia Earhart', 'Every strike brings me closer to the next home run. –Babe Ruth', 'Definiteness of purpose is the starting point of all achievement. –W. Clement Stone', 'Life isn’t about getting and having, it’s about giving and being. –Kevin Kruse', 'Life is what happens to you while you’re busy making other plans. –John Lennon', 'We become what we think about. –Earl Nightingale', 'Life is 10% what happens to me and 90% of how I react to it. –Charles Swindoll', 'The mind is everything. What you think you become.  –Buddha', 'Eighty percent of success is showing up. –Woody Allen', 'Your time is limited, so don’t waste it living someone else’s life. –Steve Jobs', 'You can never cross the ocean until you have the courage to lose sight of the shore. –Christopher Columbus', 'Whether you think you can or you think you can’t, you’re right. –Henry Ford', 'The best revenge is massive success. –Frank Sinatra', 'Start where you are. Use what you have.  Do what you can. –Arthur Ashe', 'quote20', 'Everything has beauty, but not everyone can see. –Confucius', 'When I let go of what I am, I become what I might be. –Lao Tzu', 'Happiness is not something readymade.  It comes from your own actions. –Dalai Lama']
 
   /***********************************************************************************
   Below is where the real fun begins
@@ -216,11 +216,11 @@ for (var i = 0; i < sortingButtons.length; i++) {
     var liBook = document.createElement("li");
     var liQuote = document.createElement("li");
     //create text for list items
-    imgPic.setAttribute("src", "styles/assets/" + user['pic'] + ".jpeg")
+    imgPic.setAttribute("src", "styles/assets/" + user['pic'] + '.jpeg')
     liUsername.appendChild(document.createTextNode("Username: " + user['username']));
     liId.appendChild(document.createTextNode("User ID: " + user['id']));
     liBook.appendChild(document.createTextNode("Favorite Book: " + user['favoriteBook']));
-    liQuote.appendChild(document.createTextNode("Favorite Book: " + user['favoriteQuote']));
+    liQuote.appendChild(document.createTextNode("Favorite Quote: " + user['favoriteQuote']));
     //append information to ul
     ul.appendChild(imgPic);
     ul.appendChild(liUsername);
