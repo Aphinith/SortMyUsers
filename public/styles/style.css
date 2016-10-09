@@ -8,7 +8,8 @@ h1 {
   text-align: center;
   font-family: "Times New Roman", Times, Serif;
   font-size: 45px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .main {
@@ -20,15 +21,6 @@ h1 {
   border-right: thick;
 }
 
-.c1 {
-  background-color: red;
-  height: 50px;
-}
-
-.c2 {
-  background-color: blue;
-  height: 50px;
-}
 /****************************************************
 Search Bar
 *****************************************************/
@@ -62,7 +54,7 @@ How the different sorting options are displayed
 div.sorting-menu {
   font-size: 20px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #sort-users {
@@ -92,6 +84,10 @@ div.sorting-menu {
 /****************************************************
 How list of users are displayed on left column
 *****************************************************/
+
+#user-list {
+  font-size: 20px;
+}
 
 #all-users-text {
   width: 120px;
@@ -127,6 +123,10 @@ ul.all-usernames {
 /****************************************************
 How single user is displayed on right column
 *****************************************************/
+
+#user-info {
+  font-size: 20px;
+}
 
 .single-user-pic {
   margin-top: 15px;
