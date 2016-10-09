@@ -51,8 +51,38 @@ input.search-button {
 
 .search-results {
   width: 100%;
-  height: 50px;
+  height: 40px;
   margin-top: 10px;
+}
+
+/****************************************************
+How the different sorting options are displayed
+*****************************************************/
+
+div.sorting-menu {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#sort-users {
+  margin-right: 10px;
+  color: black;
+}
+
+.sorting-menu a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.sorting-option {
+  background-color: #F9A70C;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.sorting-option:hover {
+  background-color: yellow;
 }
 
 
@@ -67,10 +97,6 @@ How list of users are displayed on left column
 .instructions {
   margin: 10px 0;
   text-align: center;
-}
-
-div.sorting-menu {
-  font-size: 20px;
 }
 
 div.user-list{
