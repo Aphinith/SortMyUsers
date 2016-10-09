@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Custom style sheet -->
 <link rel="stylesheet" type="text/css" href="styles/style.css">
 <head>
   <title>Sorting my users</title>
 </head>
 <body>
-  <h1>User Directory</h1>
+  <div class="container">
+    <section class="row">
+      <div class="col-md-12 col-md-offset-0" id="main">
+        <h1>User Directory</h1>
 
-  <div class="search-bar">
-    <form onsubmit="searchUsers(); return false">
-      <input type="text" class="search-input" placeholder="Enter Username Here (case sensitive)" name="searchUsername">
-      <input type="submit" class="search-button" value="Search">
-    </form>
-    <div class="search-results"></div>
-  </div>
+        <div class="search-bar">
+          <form onsubmit="searchUsers(); return false">
+            <input type="text" class="search-input" placeholder="Enter Username Here (case sensitive)" name="searchUsername">
+            <input type="submit" class="search-button" value="Search">
+          </form>
+          <div class="search-results"></div>
+        </div>
 
-  <div class="sorting-options">
-    <div class="sorting-buttons">Sort by:</div>
-    <button type="button" class="sort-by-alphabet">alphabet</button>
-    <button type="button" class="sort-reverse">reverse-alphabet</button>
-    <button type="button" class="sort-all-caps">ALL CAPS</button>
-    <button type="button" class="sort-all-lowercase">lowercase</button>
-  </div>
-
-  <div class="container-two-bottom-columns">
-    <div class="container-sorting-dropdown-menu">
-      <div class="user-list">All Users</div>
-      <div class="sorting-menu">
-        <a href="#" class="dropbtn">Sort By</a>
-        <div class="dropdown-content">
-        <a href="#" class="sorting-option" id="sort-by-alphabet">alphabet</a> <br>
-        <a href="#" class="sorting-option" id="sort-reverse">reverse Alphabet</a> <br>
-        <a href="#" class="sorting-option" id="sort-all-caps">ALL CAPS</a> <br>
-        <a href="#" class="sorting-option" id="sort-all-lowercase">lowercase</a> 
+      <div class="row" id="text-for-sorting-list">
+        <div class="col-md-2" id="all-users-text">
+          <div class="user-list">All Users | </div>
+        </div>
+        <div class="col-md-6">
+          <div class="sorting-menu">
+            <a href="#">Sort By:</a>
+            <a href="#" class="sorting-option" id="sort-by-alphabet">alpha</a> |
+            <a href="#" class="sorting-option" id="sort-reverse">reverse alpha</a> |
+            <a href="#" class="sorting-option" id="sort-all-caps">CAPS</a> |
+            <a href="#" class="sorting-option" id="sort-all-lowercase">lowercase</a> 
+          </div>
         </div>
       </div>
-    </div>
-    <div class="all-users">
-      <ul class="all-usernames">
-      </ul>
-    </div>
 
-    <div class="user-info">
-      This is where each specific user information will be listed
-      <ul class="single-user-info">
-      </ul>
-    </div>
+      <div class="row">
+        <div class="col-md-1">
+          <div class="c1">
+            <ul class="all-usernames"></ul>
+          </div>
+        </div>
+        <div class="col-md-5 col-md-offset-5">
+          <div class="c2">
+            
+            <div class="user-info">
+              This is where each specific user information will be listed
+              <ul class="single-user-info"></ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </section>
   </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <script src="js/app.js"></script>
 <script src="js/searchBar.js"></script>

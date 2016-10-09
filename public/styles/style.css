@@ -1,8 +1,20 @@
+
 h1 {
   color: blue;
   text-align: center;
 }
 
+
+
+.c1 {
+  background-color: red;
+  height: 50px;
+}
+
+.c2 {
+  background-color: blue;
+  height: 50px;
+}
 /****************************************************
 Search Bar
 *****************************************************/
@@ -25,62 +37,57 @@ input.search-button {
 
 .search-results {
   width: 100%;
-  height: 20px;
+  height: 50px;
+  margin-top: 10px;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 /****************************************************
-Sorting Dropdown
+Column for list of users
 *****************************************************/
-
-div.user-list {
-  float: left;
+#text-for-sorting-list {
+  margin-bottom: 20px;
 }
 
-li.sorting-menu {
-  position: relative;
-  left: 100px;
+#all-users-text {
+  width: 120px;
 }
 
 div.sorting-menu {
+  font-size: 20px;
+}
+
+div.user-list{
+  font-size: 20px;
+}
+
+ul.all-usernames {
   position: absolute;
-  left: 250px;
-
+  left: -20px;
 }
-
-div.dropdown-content {
-  display: none;
-}
-
-div.dropdown-content:hover {
-  display: block;
-}
-
-a.dropbtn:hover + div.dropdown-content {
-  display: block;
-}
-
-
-
-
-
-
-
-
-.container {
-  width: 100%;
-}
-
-.all-users {
-  float: left;
-  width: 50%;
-}
-
-.sorting-buttons {
-  float: left;
-}
-
 
 .username {
   cursor: pointer;
+}
+
+/****************************************************
+How username are displayed
+*****************************************************/
+
+li {
+  list-style: none;
+}
+
+li.username {
+  width: 80px;
 }
