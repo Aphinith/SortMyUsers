@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   //create function to sort by all caps first
-  var sortByAllCaps = function() {
+  var sortByTitleCase = function() {
     //clear the ul tag
     var ul = document.getElementsByClassName("all-usernames")[0];
     ul.innerHTML = '';
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   //create function to sort by all lowercase first
-  var sortByLowercase = function() {
+  var sortByLowerCase = function() {
     //clear the ul tag
     var ul = document.getElementsByClassName("all-usernames")[0];
     ul.innerHTML = '';
@@ -199,10 +199,10 @@ var sortingCommand = function(e) {
       sortByReverse();
       break;
     case "sort-all-caps":
-      sortByAllCaps();
+      sortByTitleCase();
       break;
     case "sort-all-lowercase":
-      sortByLowercase();
+      sortByLowerCase();
       break;
   }
 } 
