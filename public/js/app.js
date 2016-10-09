@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var li = document.createElement("li");
       li.appendChild(document.createTextNode(allUsersSorted[i]));
       li.setAttribute("class", "username");
-      li.setAttribute("data-key", allUsersSorted[i]);
+      li.setAttribute("data-username", allUsersSorted[i]);
       userId++;
       li.setAttribute("data-id", userId);
       ul.appendChild(li);
@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
       ul.appendChild(li);
     }
     clickUsers();
+    document.getElementsByClassName("search-results")[0].innerHTML = '';
   }
 
   //create function to sort in reverse alphabetical order
@@ -125,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
       ul.appendChild(li);
     }
     clickUsers();
+    document.getElementsByClassName("search-results")[0].innerHTML = '';
   }
 
   //create function to sort by all caps first
@@ -146,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
       ul.appendChild(li);
     }
     clickUsers();
+    document.getElementsByClassName("search-results")[0].innerHTML = '';
   }
 
   //create function to sort by all lowercase first
@@ -167,6 +170,7 @@ document.addEventListener("DOMContentLoaded", function() {
       ul.appendChild(li);
     }
     clickUsers();
+    document.getElementsByClassName("search-results")[0].innerHTML = '';
   }
 
 
@@ -243,3 +247,4 @@ for (var i = 0; i < sortingButtons.length; i++) {
   clickUsers();
 
 });
+
