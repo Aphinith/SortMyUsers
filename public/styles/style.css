@@ -79,6 +79,9 @@ div.sorting-menu {
   background-color: #F9A70C;
   border-radius: 20px;
   padding: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
 }
 
 .sorting-option:hover {
