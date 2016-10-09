@@ -178,6 +178,18 @@ document.addEventListener("DOMContentLoaded", function() {
 Lines 169 - 191: for creating the on-click event handler for sorting functions
 ************************************************************************************/
 var sortingCommand = function(e) {
+
+  //return background color of sorting options back to original color
+  var allButtons = document.getElementsByClassName("sorting-option");
+  for (var i = 0; i < allButtons.length; i++) {
+    allButtons[i].style.backgroundColor = "#F9A70C";
+  }
+
+  //keep background color of sorting option yellow after clicking
+  var button = e.target;
+  button.style.backgroundColor = "yellow";
+
+  //call corresponding sorting function to sort names
   var command = e.target.getAttribute("id");
   switch (command) {
     case "sort-by-alphabet":
