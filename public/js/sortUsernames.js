@@ -25,7 +25,7 @@ var UserInfo = function(username, id, pic, favoriteBook, favoriteQuote) {
   this.favoriteQuote = favoriteQuote;
 }
 
-//create variable to store sorted users as objects
+//create variable to store sorted users as objects which will be used in all other JS files
 var finalSortedUserList = [];
 
 //below function sorts and renders sorted names onto DOM
