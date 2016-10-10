@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var finalSortedUserList = [];
 
   /***********************************************************************************
-  Lines 37-67: for automatically sorting usernames upon page loading and creating an array of objects that are the newly sorted usernames
+  Lines 41-72: for automatically sorting usernames upon page loading and creating an array of objects that are the newly sorted usernames
   ************************************************************************************/
 
   (function defaultSort() {
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
   })();
 
   /***********************************************************************************
-  Lines ## - ##: to help sorting functions by "ALL CAPS" and by "lowercase" options 
+  Lines 78 - 87: to help sorting functions by "ALL CAPS" and by "lowercase" options 
   ************************************************************************************/
 
   var nameWithCap = [];
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   /***********************************************************************************
-  Lines 89 - 164: the different sorting functions
+  Lines 93 - 174: the different sorting functions
   ************************************************************************************/
 
   //create function to sort by alphabet 
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 /***********************************************************************************
-Lines 169 - 191: for creating the on-click event handler for sorting functions
+Lines 180 - 215: for creating the on-click event handler for sorting functions
 ************************************************************************************/
 var sortingCommand = function(e) {
 
@@ -215,7 +215,7 @@ for (var i = 0; i < sortingButtons.length; i++) {
 }
 
   /***********************************************************************************
-  Lines ### - ###: for handling on-click event handler for selecting user from list
+  Lines 221 - 250: for handling on-click event handler for selecting user from list
   ************************************************************************************/
 
   var selectedUser = function(e) {
@@ -250,7 +250,7 @@ for (var i = 0; i < sortingButtons.length; i++) {
   }
 
   /***********************************************************************************
-  Lines ### - ###: for creating the on-click event handler for selecting user from list
+  Lines 256 - 262: for creating the on-click event handler for selecting user from list
   ************************************************************************************/
 
   function clickUsers() {
