@@ -63,7 +63,7 @@ var sortByTitleCase = function() {
   ul.innerHTML = '';
 
   //create a final sorted list with all names starting with a capital letter first
-  var joinedNames = nameWithCap.concat(nameWithLowercase);
+  var joinedNames = titleCaseNames.concat(lowerCaseNames);
 
   for (var i = 0; i < joinedNames.length; i++) {
     ul = document.getElementsByClassName("all-usernames")[0];
@@ -85,7 +85,7 @@ var sortByLowerCase = function() {
   ul.innerHTML = '';
 
   //create a final sorted list with all names starting with a lowercase letter first
-  var joinedNames = nameWithLowercase.concat(nameWithCap);
+  var joinedNames = lowerCaseNames.concat(titleCaseNames);
 
   for (var i = 0; i < joinedNames.length; i++) {
     ul = document.getElementsByClassName("all-usernames")[0];
