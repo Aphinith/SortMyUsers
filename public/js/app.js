@@ -75,14 +75,14 @@ document.addEventListener("DOMContentLoaded", function() {
   Lines 78 - 87: to help sorting functions by "ALL CAPS" and by "lowercase" options 
   ************************************************************************************/
 
-  var nameWithCap = [];
-  var nameWithLowercase = [];
+  var titleCaseNames = [];
+  var lowerCaseNames = [];
 
   for (var i = 0; i < finalSortedUserList.length; i++) {
     if (finalSortedUserList[i]['username'][0] === finalSortedUserList[i]['username'][0].toUpperCase()) {
-      nameWithCap.push(finalSortedUserList[i]);
+      titleCaseNames.push(finalSortedUserList[i]);
     } else {
-      nameWithLowercase.push(finalSortedUserList[i]);
+      lowerCaseNames.push(finalSortedUserList[i]);
     }
   }
 
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ul.innerHTML = '';
 
     //create a final sorted list with all names starting with a capital letter first
-    var joinedNames = nameWithCap.concat(nameWithLowercase);
+    var joinedNames = titleCaseNames.concat(lowerCaseNames);
 
     for (var i = 0; i < joinedNames.length; i++) {
       ul = document.getElementsByClassName("all-usernames")[0];
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ul.innerHTML = '';
 
     //create a final sorted list with all names starting with a lowercase letter first
-    var joinedNames = nameWithLowercase.concat(nameWithCap);
+    var joinedNames = lowerCaseNames.concat(titleCaseNames);
 
     for (var i = 0; i < joinedNames.length; i++) {
       ul = document.getElementsByClassName("all-usernames")[0];
